@@ -12,10 +12,13 @@ def inhibitory(filter_lenght):
     eta = 3*np.exp(-s/9) - 8*np.exp(-s/37) + 4*np.exp(-s/62)
     eta[0] = 12.5
 
+    # theta0? 
+    theta0 = 2.75
+
     # theta1. S(t-s)
     theta1 = 12*np.exp(-s/37)+2*np.exp(-s/500)
 
-    return kappa, eta, theta1, s
+    return kappa, eta, theta0, theta1, s
 
 
 def excitatory(filter_lenght):
@@ -30,7 +33,10 @@ def excitatory(filter_lenght):
     eta = 7*(np.exp(-(s-1)/18)-np.exp(-(s-1)/45))
     eta[0] = 12.5
 
+    # theta0? 
+    theta0 = 2.75
+
     # theta1. S(t-s)
     theta1 = 12*np.exp(-s/37)+2*np.exp(-s/500)
 
-    return kappa, eta, theta1, s
+    return kappa, eta, theta0, theta1, s

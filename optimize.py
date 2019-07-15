@@ -89,7 +89,7 @@ for _ in range(iterations):
     plt.show()
 
     param = np.concatenate((neuron_fit.kappa, neuron_fit.eta), axis=0)
-    param = fmin_cg(error_param, param)
-    neuron_fit.kappa = param[0:filter_lenght]
-    neuron_fit.eta = param[filter_lenght:]
+    result = minimize(error_u_param, param, method ='CG', options={'maxiter':1})
+    neuron_fit.kappa = result.x[0:filter_lenght]
+    neuron_fit.eta = result.x[filter_lenght:]
 

@@ -33,7 +33,7 @@ def error_u_param(param):
 
 steps = 300
 t = np.arange(0,steps)
-intensity = np.ones((steps,))
+intensity = np.ones((steps,)) + np.random.randn(steps)/10
 #intensity[0:1] = 0
 
 filter_lenght = 15

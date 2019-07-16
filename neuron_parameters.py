@@ -10,7 +10,7 @@ def inhibitory(filter_lenght):
     # eta. S(t-s)
     # Original: eta = 3*np.exp(-s/9) - 8*np.exp(-s/37) + 4*np.exp(-s/62)
     eta = 3*np.exp(-s/9) - 8*np.exp(-s/37) + 4*np.exp(-s/62)
-    eta[0] = 12.5
+    eta[0] = 12.5 # might give problems during optimization?
 
     # theta0? 
     theta0 = 2.75
@@ -31,7 +31,7 @@ def excitatory(filter_lenght):
     # eta. S(t-s)
     # Original: eta = 7*(np.exp(-t/18)-np.exp(-t/45))
     eta = 7*(np.exp(-(s-1)/18)-np.exp(-(s-1)/45))
-    eta[0] = 12.5
+    eta[0] = 12.5 # might give problems during optimization? remove if doing optimization
 
     # theta0? 
     theta0 = 2.75

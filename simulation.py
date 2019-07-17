@@ -71,8 +71,21 @@ if __name__ == "__main__":
     plt.legend()
 
     # Simulation Plot
+    # Input
     plt.figure()
+    plt.subplot(3,1,1)
+    plt.plot(t_vec, intensity)
+    plt.title('I(t)')
+
+    plt.subplot(3,1,2)
     plt.plot(t_vec, u, label='u(t)')
     plt.plot(t_vec, theta, label='threshold', ls='-.', c='k', alpha=0.5)
+    plt.title('u(t)')
     plt.legend()
+    
+    plt.subplot(3,1,3)
+    plt.plot(t_vec, a, label='a(t)')
+    plt.title('a(t)')
+    plt.legend()
+
     plt.show()

@@ -46,17 +46,18 @@ class spr_neuron:
 if __name__ == "__main__":
 
     # Inputs
-    steps = 1000
+    steps = 400
     t_vec = np.arange(0,steps)
 
-    i = np.ones((steps,))
+    intensity = np.ones((steps,)) + np.random.randn(steps)/10
+    intensity[0:50] = 0
 
 
     # Neuron
-    filter_steps = 100
-    neuron = spr_neuron(filter_steps, 'i')
+    filter_steps = 400
+    neuron = spr_neuron(filter_steps, 'e')
 
-    u, a, theta = neuron.simulate(i)
+    u, a, theta = neuron.simulate(intensity)
 
 
     ## PLOTTING

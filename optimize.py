@@ -131,7 +131,7 @@ for iterat in range(iterations):
     plt.show()
 
     param = np.concatenate((neuron_fit.kappa, neuron_fit.eta), axis=0)
-    result = minimize(error_u_param, param, method ='Newton-CG', options={'maxiter':1}, jac=jacobian)#, hess=hessian)
+    result = minimize(error_u_param, param, method ='Newton-CG', options={'maxiter':1}, jac=jacobian, hess=hessian)
     #pdb.set_trace()
     neuron_fit.kappa = result.x[0:filter_lenght]
     neuron_fit.eta = result.x[filter_lenght:]
